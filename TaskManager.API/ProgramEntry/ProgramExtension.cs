@@ -29,6 +29,7 @@ namespace TaskManager.API.ProgramEntry
             Services.AddAutoMapper(typeof(UserMappers));
             Services.AddAutoMapper(typeof(CommentMappers));
             Services.AddAutoMapper(typeof(ProjectMappings));
+            Services.AddAutoMapper(typeof(CategoryMappings));
             Services.AddAutoMapper(typeof(ExeptionLogMapper));
 
             Services.AddTransient<ITaskService, TaskService>();
@@ -36,6 +37,7 @@ namespace TaskManager.API.ProgramEntry
             Services.AddTransient<ILabelService, LabelService>();
             Services.AddTransient<IProjectService, ProjectService>();
             Services.AddTransient<ICommentService, CommentService>();
+            Services.AddTransient<ICategoryService, CategoryService>();
             Services.AddTransient<IPriorityService, PriorityService>();
 
             return Services;

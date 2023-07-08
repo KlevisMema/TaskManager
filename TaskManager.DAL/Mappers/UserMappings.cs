@@ -4,9 +4,9 @@ using TaskManager.DAL.DTO_s.User;
 
 namespace TaskManager.DAL.Mappers
 {
-    public class UserMappers : Profile
+    public class UserMappings : Profile
     {
-        public UserMappers() 
+        public UserMappings() 
         {
             CreateMap<UserCreateDto, User>();
             CreateMap<UserUpdateDto, User>();

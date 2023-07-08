@@ -3,9 +3,9 @@ using TaskManager.DAL.DTO_s.Task;
 
 namespace TaskManager.DAL.Mappers
 {
-    public class TaskMapper : Profile
+    public class TaskMappings : Profile
     {
-        public TaskMapper()
+        public TaskMappings()
         {
             CreateMap<Models.Task, TaskDto>();
             CreateMap<TaskCreateDto, Models.Task>();

@@ -4,9 +4,9 @@ using TaskManager.DAL.DTO_s.Comment;
 
 namespace TaskManager.DAL.Mappers
 {
-    public class CommentMappers : Profile
+    public class CommentMappings : Profile
     {
-        public CommentMappers() 
+        public CommentMappings() 
         {
             CreateMap<CommentCreateDto, Comment>();
             CreateMap<CommentUpdateDto, Comment>();
