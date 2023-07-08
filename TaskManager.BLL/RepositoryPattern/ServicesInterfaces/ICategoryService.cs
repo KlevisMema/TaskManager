@@ -1,7 +1,7 @@
 ﻿using TaskManager.BLL.ServiceResponse;
 using TaskManager.DAL.DTO_s.Category;
 
-namespace TaskManager.BLL.ServicesInterfaces
+namespace TaskManager.BLL.RepositoryPattern.ServicesInterfaces
 {
     public interface ICategoryService
     {

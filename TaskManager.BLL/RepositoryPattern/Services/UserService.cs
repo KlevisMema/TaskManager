@@ -4,11 +4,12 @@ using TaskManager.DAL.Context;
 using TaskManager.DAL.DTO_s.User;
 using TaskManager.BLL.BaseServices;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using TaskManager.BLL.ServiceHelpers;
 using TaskManager.BLL.ServiceResponse;
-using TaskManager.BLL.ServicesInterfaces;
+using TaskManager.BLL.RepositoryPattern.ServicesInterfaces;
 
-namespace TaskManager.BLL.Services
+namespace TaskManager.BLL.RepositoryPattern.Services
 {
 
     public class UserService : BaseService, IUserService
@@ -23,6 +24,21 @@ namespace TaskManager.BLL.Services
         ) : base(mapper, dbContext)
         {
             _userManager = userManager;
+        }
+
+        public async Task<Response<List<UserDto>>> 
+        GetUsers()
+        {
+            try
+            {
+                var users = await _dbContext.Users.ToListAsync();
+                return Response<List<UserDto>>.Ok(_mapper.Map<List<UserDto>>(users), "Users retrieved successfully");
+            }
+            catch (Exception ex)
+            {
+                await ExceptionLogger.LogException(ex, _dbContext);
+                return Response<List<UserDto>>.ErrorMsg(ex.ToString());
+            }
         }
 
         public async Task<Response<UserDto>>

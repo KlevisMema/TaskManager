@@ -47,7 +47,7 @@ namespace TaskManager.BLL.ServiceResponse
             StatusCode = statusCode;
         }
 
-     
+
         public static Response<T> 
         Ok
         (
@@ -95,6 +95,5 @@ namespace TaskManager.BLL.ServiceResponse
         {
             return new Response<T>(message, false, HttpStatusCode.BadRequest);
         }
-
     }
 }

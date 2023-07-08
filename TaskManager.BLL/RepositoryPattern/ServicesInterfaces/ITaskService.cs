@@ -1,7 +1,7 @@
 ﻿using TaskManager.DAL.DTO_s.Task;
 using TaskManager.BLL.ServiceResponse;
 
-namespace TaskManager.BLL.ServicesInterfaces
+namespace TaskManager.BLL.RepositoryPattern.ServicesInterfaces
 {
     public interface ITaskService
     {

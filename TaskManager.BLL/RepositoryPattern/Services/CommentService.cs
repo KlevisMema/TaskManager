@@ -6,9 +6,9 @@ using Microsoft.EntityFrameworkCore;
 using TaskManager.DAL.DTO_s.Comment;
 using TaskManager.BLL.ServiceHelpers;
 using TaskManager.BLL.ServiceResponse;
-using TaskManager.BLL.ServicesInterfaces;
+using TaskManager.BLL.RepositoryPattern.ServicesInterfaces;
 
-namespace TaskManager.BLL.Services
+namespace TaskManager.BLL.RepositoryPattern.Services
 {
     public class CommentService : BaseService, ICommentService
     {
@@ -131,6 +131,31 @@ namespace TaskManager.BLL.Services
                 await ExceptionLogger.LogException(ex, _dbContext);
 
                 return Response<bool>.ErrorMsg(ex.ToString());
+            }
+        }
+
+        public async Task<Response<CommentDto>> 
+        CreateCommentForTask
+        (
+            Guid taskId, 
+            CommentCreateDto commentDto
+        )
+        {
+            try
+            {
+                var comment = _mapper.Map<Comment>(commentDto);
+                comment.TaskId = taskId;
+
+                _dbContext.Comments.Add(comment);
+                await _dbContext.SaveChangesAsync();
+
+                return Response<CommentDto>.Ok(_mapper.Map<CommentDto>(comment), "Comment created successfully");
+            }
+            catch (Exception ex)
+            {
+                await ExceptionLogger.LogException(ex, _dbContext);
+
+                return Response<CommentDto>.ErrorMsg(ex.ToString());
             }
         }
 

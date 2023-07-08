@@ -3,7 +3,7 @@ using TaskManager.DAL.Context;
 
 namespace TaskManager.BLL.ServiceHelpers
 {
-    internal static class ExceptionLogger
+    public static class ExceptionLogger
     {
         public static async System.Threading.Tasks.Task
         LogException

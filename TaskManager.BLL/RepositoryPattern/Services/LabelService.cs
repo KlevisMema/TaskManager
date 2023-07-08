@@ -6,9 +6,9 @@ using TaskManager.BLL.BaseServices;
 using Microsoft.EntityFrameworkCore;
 using TaskManager.BLL.ServiceHelpers;
 using TaskManager.BLL.ServiceResponse;
-using TaskManager.BLL.ServicesInterfaces;
+using TaskManager.BLL.RepositoryPattern.ServicesInterfaces;
 
-namespace TaskManager.BLL.Services
+namespace TaskManager.BLL.RepositoryPattern.Services
 {
     public class LabelService : BaseService, ILabelService
     {

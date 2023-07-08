@@ -6,9 +6,9 @@ using Microsoft.EntityFrameworkCore;
 using TaskManager.BLL.ServiceHelpers;
 using TaskManager.DAL.DTO_s.Priority;
 using TaskManager.BLL.ServiceResponse;
-using TaskManager.BLL.ServicesInterfaces;
+using TaskManager.BLL.RepositoryPattern.ServicesInterfaces;
 
-namespace TaskManager.BLL.Services
+namespace TaskManager.BLL.RepositoryPattern.Services
 {
     public class PriorityService : BaseService, IPriorityService
     {

@@ -5,10 +5,10 @@ using TaskManager.BLL.BaseServices;
 using Microsoft.EntityFrameworkCore;
 using TaskManager.BLL.ServiceHelpers;
 using TaskManager.BLL.ServiceResponse;
-using TaskManager.BLL.ServicesInterfaces;
 using Task = TaskManager.DAL.Models.Task;
+using TaskManager.BLL.RepositoryPattern.ServicesInterfaces;
 
-namespace TaskManager.BLL.Services
+namespace TaskManager.BLL.RepositoryPattern.Services
 {
     public class TaskService : BaseService, ITaskService
     {
@@ -17,7 +17,7 @@ namespace TaskManager.BLL.Services
             IMapper mapper,
             ApplicationDbContext dbContext
         ) : base(mapper, dbContext)
-        {}
+        { }
 
         public async Task<Response<TaskDto>>
         CreateTask

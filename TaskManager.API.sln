@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskManager.BLL", "TaskMana
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskManager.DAL", "TaskManager.DAL\TaskManager.DAL.csproj", "{29516F50-9181-45DF-A6BC-1ACDD44FF362}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagment.SECURITY", "TaskManagment.ACCOUNT\TaskManagment.SECURITY.csproj", "{30FA09DC-D382-4159-8CF2-C99CD59F2698}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{29516F50-9181-45DF-A6BC-1ACDD44FF362}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29516F50-9181-45DF-A6BC-1ACDD44FF362}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29516F50-9181-45DF-A6BC-1ACDD44FF362}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30FA09DC-D382-4159-8CF2-C99CD59F2698}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30FA09DC-D382-4159-8CF2-C99CD59F2698}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30FA09DC-D382-4159-8CF2-C99CD59F2698}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30FA09DC-D382-4159-8CF2-C99CD59F2698}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
