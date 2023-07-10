@@ -2,7 +2,7 @@
 using TaskManager.DAL.Models;
 using TaskManager.DAL.Context;
 using TaskManager.BLL.BaseServices;
-using TaskManager.DAL.DTO_s.Project;
+using TaskManager.DTO.DTO_s.Project;
 using Microsoft.EntityFrameworkCore;
 using TaskManager.HELPERS.LogsHelper;
 using TaskManager.HELPERS.ServiceResponse;

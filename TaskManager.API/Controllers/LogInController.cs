@@ -1,6 +1,6 @@
 ﻿#region Usings
 using Microsoft.AspNetCore.Mvc;
-using TaskManager.DAL.DTO_s.Login;
+using TaskManager.DTO.DTO_s.Login;
 using TaskManager.HELPERS.ServiceResponse;
 using TaskManagment.USER.UserAuthorizationService.ServiceInterfaces;
 #endregion

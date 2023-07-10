@@ -15,7 +15,7 @@ Note: All methods return a Task<Response<T>> object, where T represents the retu
 */
 
 #region Usings
-using TaskManager.DAL.DTO_s.Comment;
+using TaskManager.DTO.DTO_s.Comment;
 using TaskManager.HELPERS.ServiceResponse;
 #endregion
 

@@ -7,7 +7,7 @@ This file contains the implementation of the IOAuthJwtTokenService interface whi
 #region Usings
 using System.Text;
 using System.Security.Claims;
-using TaskManager.DAL.DTO_s.User;
+using TaskManager.DTO.DTO_s.User;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;

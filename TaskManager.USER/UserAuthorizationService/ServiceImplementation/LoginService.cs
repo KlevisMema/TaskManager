@@ -1,7 +1,7 @@
 ﻿#region Usings
 using TaskManager.DAL.Models;
 using TaskManager.DAL.Context;
-using TaskManager.DAL.DTO_s.Login;
+using TaskManager.DTO.DTO_s.Login;
 using Microsoft.AspNetCore.Identity;
 using TaskManager.HELPERS.LogsHelper;
 using TaskManager.HELPERS.ServiceResponse;
@@ -61,7 +61,7 @@ namespace TaskManagment.USER.UserAuthorizationService.ServiceImplementation
                     if (roles.Count == 0)
                         return Response<string>.NotFound("User has no roles");
 
-                    var userTransformedObj = new TaskManager.DAL.DTO_s.User.UserDto()
+                    var userTransformedObj = new TaskManager.DTO.DTO_s.User.UserDto()
                     {
                         Id = user!.Id,
                         Email = logIn.Email,

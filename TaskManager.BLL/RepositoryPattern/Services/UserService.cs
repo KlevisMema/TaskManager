@@ -16,7 +16,7 @@
 using AutoMapper;
 using TaskManager.DAL.Models;
 using TaskManager.DAL.Context;
-using TaskManager.DAL.DTO_s.User;
+using TaskManager.DTO.DTO_s.User;
 using TaskManager.BLL.BaseServices;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;

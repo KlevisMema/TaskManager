@@ -12,7 +12,7 @@
 using System.Text;
 using System.Reflection;
 using TaskManager.DAL.Models;
-using TaskManager.DAL.Mappers;
+using TaskManager.DTO.Mappers;
 using TaskManager.DAL.Context;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Identity;

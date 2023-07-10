@@ -1,5 +1,5 @@
 ﻿#region Usings
-using TaskManager.DAL.DTO_s.Login;
+using TaskManager.DTO.DTO_s.Login;
 using TaskManager.HELPERS.ServiceResponse; 
 #endregion
 

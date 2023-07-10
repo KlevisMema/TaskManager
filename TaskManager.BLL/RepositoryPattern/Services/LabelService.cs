@@ -15,7 +15,7 @@
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using TaskManager.DAL.Context;
-using TaskManager.DAL.DTO_s.Label;
+using TaskManager.DTO.DTO_s.Label;
 using TaskManager.DAL.Models;
 using TaskManager.HELPERS.LogsHelper;
 using TaskManager.HELPERS.ServiceResponse;

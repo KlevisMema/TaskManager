@@ -3,7 +3,7 @@ This interface defines the contract for the CategoryService, which is responsibl
 */
 
 #region Usings
-using TaskManager.DAL.DTO_s.Category;
+using TaskManager.DTO.DTO_s.Category;
 using TaskManager.HELPERS.ServiceResponse;
 #endregion
 

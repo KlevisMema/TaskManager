@@ -1,4 +1,4 @@
-﻿using TaskManager.DAL.DTO_s.Project;
+﻿using TaskManager.DTO.DTO_s.Project;
 using TaskManager.HELPERS.ServiceResponse;
 
 namespace TaskManager.BLL.RepositoryPattern.ServicesInterfaces

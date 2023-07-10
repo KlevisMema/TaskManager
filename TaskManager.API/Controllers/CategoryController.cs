@@ -20,7 +20,7 @@
 
 #region Usings
 using Microsoft.AspNetCore.Mvc;
-using TaskManager.DAL.DTO_s.Category;
+using TaskManager.DTO.DTO_s.Category;
 using TaskManager.BLL.RepositoryPattern.ServicesInterfaces;
 using TaskManager.HELPERS.ServiceResponse;
 #endregion

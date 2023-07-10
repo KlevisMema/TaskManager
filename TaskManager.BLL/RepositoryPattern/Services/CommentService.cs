@@ -22,7 +22,7 @@ using TaskManager.DAL.Models;
 using TaskManager.DAL.Context;
 using TaskManager.BLL.BaseServices;
 using Microsoft.EntityFrameworkCore;
-using TaskManager.DAL.DTO_s.Comment;
+using TaskManager.DTO.DTO_s.Comment;
 using TaskManager.HELPERS.LogsHelper;
 using TaskManager.HELPERS.ServiceResponse;
 using TaskManager.BLL.RepositoryPattern.ServicesInterfaces;

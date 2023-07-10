@@ -13,7 +13,7 @@
 */
 
 #region Usings
-using TaskManager.DAL.DTO_s.Label;
+using TaskManager.DTO.DTO_s.Label;
 using TaskManager.HELPERS.ServiceResponse;
 #endregion
 

@@ -1,4 +1,4 @@
-﻿using TaskManager.DAL.DTO_s.Priority;
+﻿using TaskManager.DTO.DTO_s.Priority;
 using TaskManager.HELPERS.ServiceResponse;
 
 namespace TaskManager.BLL.RepositoryPattern.ServicesInterfaces

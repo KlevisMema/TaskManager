@@ -19,7 +19,7 @@
 
 #region Usings
 using Microsoft.AspNetCore.Mvc;
-using TaskManager.DAL.DTO_s.Comment;
+using TaskManager.DTO.DTO_s.Comment;
 using TaskManager.BLL.RepositoryPattern.ServicesInterfaces;
 using TaskManager.HELPERS.ServiceResponse;
 #endregion

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using TaskManager.DAL.Context;
-using TaskManager.DAL.DTO_s.Task;
+using TaskManager.DTO.DTO_s.Task;
 using TaskManager.BLL.BaseServices;
 using Microsoft.EntityFrameworkCore;
 using TaskManager.HELPERS.LogsHelper;
