@@ -1,0 +1,24 @@
+[2023-07-09 17:32:48]  ==> Method LogAction
+Exception type: System.ArgumentNullException.. ==> Exception source: System.Private.CoreLib ==> Exception message: Value cannot be null. (Parameter 'key')
+Stack trace:    at System.Collections.Generic.Dictionary`2.FindValue(TKey key)
+   at System.Collections.Generic.Dictionary`2.TryGetValue(TKey key, TValue& value)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityReferenceMap.TryGet(Object entity, IEntityType entityType, InternalEntityEntry& entry, Boolean throwOnNonUniqueness)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.TryGetEntry(Object entity, IEntityType entityType, Boolean throwOnTypeMismatch)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.GetOrCreateEntry(Object entity, IEntityType entityType)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.EntryWithoutDetectChanges(TEntity entity)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.Add(TEntity entity)
+   at TaskManager.HELPERS.LogsHelper.LoggerHelper.LogAction(String action, ApplicationDbContext dbContext) in C:\Users\memak\source\repos\TaskManager.API\TaskManager.HELPERS\LogsHelper\LoggerHelper.cs:line 70
+
+
+[2023-07-09 17:35:06]  ==> Method LogAction
+Exception type: System.ArgumentNullException.. ==> Exception source: System.Private.CoreLib ==> Exception message: Value cannot be null. (Parameter 'key')
+Stack trace:    at System.Collections.Generic.Dictionary`2.FindValue(TKey key)
+   at System.Collections.Generic.Dictionary`2.TryGetValue(TKey key, TValue& value)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityReferenceMap.TryGet(Object entity, IEntityType entityType, InternalEntityEntry& entry, Boolean throwOnNonUniqueness)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.TryGetEntry(Object entity, IEntityType entityType, Boolean throwOnTypeMismatch)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.GetOrCreateEntry(Object entity, IEntityType entityType)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.EntryWithoutDetectChanges(TEntity entity)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.Add(TEntity entity)
+   at TaskManager.HELPERS.LogsHelper.LoggerHelper.LogAction(String action, ApplicationDbContext dbContext) in C:\Users\memak\source\repos\TaskManager.API\TaskManager.HELPERS\LogsHelper\LoggerHelper.cs:line 70
+
+
