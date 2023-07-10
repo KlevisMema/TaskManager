@@ -1,13 +1,15 @@
-﻿using TaskManager.DAL.Models;
+﻿#region Usings
+using TaskManager.DAL.Models;
 using TaskManager.DAL.Context;
 using TaskManager.DAL.DTO_s.Login;
 using Microsoft.AspNetCore.Identity;
 using TaskManager.HELPERS.LogsHelper;
 using TaskManager.HELPERS.ServiceResponse;
-using TaskManagment.SECURITY.UserAuthenticationService.ServiceInterface;
-using TaskManagment.SECURITY.UserAuthorizationService.ServiceInterfaces;
+using TaskManagment.USER.UserAuthorizationService.ServiceInterfaces;
+using TaskManagment.SECURITY.JWTAuthenticationService.ServiceInterface; 
+#endregion
 
-namespace TaskManagment.SECURITY.UserAuthorizationService.ServiceImplementation
+namespace TaskManagment.USER.UserAuthorizationService.ServiceImplementation
 {
     public class LoginService : ILoginService
     {
@@ -15,7 +17,6 @@ namespace TaskManagment.SECURITY.UserAuthorizationService.ServiceImplementation
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
         private readonly ApplicationDbContext _dbContext;
-        
 
         public LoginService
         (

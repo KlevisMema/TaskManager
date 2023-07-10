@@ -6,7 +6,7 @@ namespace TaskManager.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class ProjectController : ControllerBase
+    public class ProjectController : BaseController
     {
         private readonly IProjectService _projectService;
 

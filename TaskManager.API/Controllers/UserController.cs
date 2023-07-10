@@ -6,7 +6,7 @@ namespace TaskManager.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class UserController : ControllerBase
+    public class UserController : BaseController
     {
         private readonly IUserService _userService;
 
@@ -59,15 +59,5 @@ namespace TaskManager.API.Controllers
             return StatusCode((int)response.StatusCode, response);
         }
 
-        /// <summary>
-        /// Deletes a user by their ID.
-        /// </summary>
-        /// <param name="id">The ID of the user to delete.</param>
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteUser(Guid id)
-        {
-            var response = await _userService.DeleteUser(id.ToString());
-            return StatusCode((int)response.StatusCode, response);
-        }
     }
 }

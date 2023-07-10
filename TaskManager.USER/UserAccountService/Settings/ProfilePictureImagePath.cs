@@ -1,4 +1,4 @@
-﻿namespace TaskManagment.SECURITY.UserAccountService.Settings
+﻿namespace TaskManagment.USER.UserAccountService.Settings
 {
     public class ProfilePictureImagePath
     {

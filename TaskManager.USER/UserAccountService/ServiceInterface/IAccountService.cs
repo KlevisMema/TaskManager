@@ -1,4 +1,4 @@
-﻿namespace TaskManagment.SECURITY.UserAccountService.ServiceInterface
+﻿namespace TaskManagment.USER.UserAccountService.ServiceInterface
 {
     public interface IAccountService
     {

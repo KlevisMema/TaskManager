@@ -1,4 +1,4 @@
-﻿namespace TaskManagment.SECURITY.UserAccountService.ServiceImplementation
+﻿namespace TaskManagment.USER.UserAccountService.ServiceImplementation
 {
     public class AccountService
     {

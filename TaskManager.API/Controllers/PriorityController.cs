@@ -6,7 +6,7 @@ namespace TaskManager.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class PriorityController : ControllerBase
+    public class PriorityController : BaseController
     {
         private readonly IPriorityService _priorityService;
 

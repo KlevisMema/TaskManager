@@ -7,7 +7,7 @@ namespace TaskManager.DAL.Mappers
     {
         public ExeptionLogMapper()
         {
-            CreateMap<Exception, ExceptionLog>();
+            CreateMap<Exception, Logger>();
         }
     }
 }

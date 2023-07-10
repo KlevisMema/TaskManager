@@ -6,7 +6,7 @@ namespace TaskManager.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class LabelController : ControllerBase
+    public class LabelController : BaseController
     {
         private readonly ILabelService _labelService;
 
@@ -56,17 +56,6 @@ namespace TaskManager.API.Controllers
         public async Task<IActionResult> UpdateLabel(Guid id, LabelUpdateDto labelDto)
         {
             var response = await _labelService.UpdateLabel(id, labelDto);
-            return StatusCode((int)response.StatusCode, response);
-        }
-
-        /// <summary>
-        /// Deletes a label by its ID.
-        /// </summary>
-        /// <param name="id">The ID of the label to delete.</param>
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteLabel(Guid id)
-        {
-            var response = await _labelService.DeleteLabel(id);
             return StatusCode((int)response.StatusCode, response);
         }
     }

@@ -28,6 +28,7 @@
   <ItemGroup>
     <ProjectReference Include="..\TaskManager.BLL\TaskManager.BLL.csproj" />
     <ProjectReference Include="..\TaskManager.DAL\TaskManager.DAL.csproj" />
+    <ProjectReference Include="..\TaskManager.USER\TaskManager.USER.csproj" />
     <ProjectReference Include="..\TaskManagment.ACCOUNT\TaskManagment.SECURITY.csproj" />
   </ItemGroup>
 

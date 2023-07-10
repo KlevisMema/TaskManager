@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TaskManager.HELPERS\TaskManager.HELPERS.csproj" />
+    <ProjectReference Include="..\TaskManagment.ACCOUNT\TaskManagment.SECURITY.csproj" />
+  </ItemGroup>
+
 </Project>

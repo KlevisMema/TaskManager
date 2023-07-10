@@ -1,7 +1,9 @@
-﻿using TaskManager.DAL.DTO_s.Login;
-using TaskManager.HELPERS.ServiceResponse;
+﻿#region Usings
+using TaskManager.DAL.DTO_s.Login;
+using TaskManager.HELPERS.ServiceResponse; 
+#endregion
 
-namespace TaskManagment.SECURITY.UserAuthorizationService.ServiceInterfaces
+namespace TaskManagment.USER.UserAuthorizationService.ServiceInterfaces
 {
     public interface ILoginService
     {

@@ -7,12 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <Folder Include="ControllerResponse\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\TaskManager.DAL\TaskManager.DAL.csproj" />
-    <ProjectReference Include="..\TaskManager.HELPERS\TaskManager.HELPERS.csproj" />
   </ItemGroup>
 
 </Project>

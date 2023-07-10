@@ -4,8 +4,8 @@ using TaskManager.DAL.Context;
 using TaskManager.BLL.BaseServices;
 using TaskManager.DAL.DTO_s.Project;
 using Microsoft.EntityFrameworkCore;
-using TaskManager.BLL.ServiceHelpers;
-using TaskManager.BLL.ServiceResponse;
+using TaskManager.HELPERS.LogsHelper;
+using TaskManager.HELPERS.ServiceResponse;
 using TaskManager.BLL.RepositoryPattern.ServicesInterfaces;
 
 namespace TaskManager.BLL.RepositoryPattern.Services
@@ -38,7 +38,7 @@ namespace TaskManager.BLL.RepositoryPattern.Services
             }
             catch (Exception ex)
             {
-                await ExceptionLogger.LogException(ex, _dbContext);
+                await LoggerHelper.LogException(ex, _dbContext);
 
                 return Response<ProjectDto>.ErrorMsg(ex.ToString());
             }
@@ -55,7 +55,7 @@ namespace TaskManager.BLL.RepositoryPattern.Services
             }
             catch (Exception ex)
             {
-                await ExceptionLogger.LogException(ex, _dbContext);
+                await LoggerHelper.LogException(ex, _dbContext);
 
                 return Response<List<ProjectDto>>.ErrorMsg(ex.ToString());
             }
@@ -77,7 +77,7 @@ namespace TaskManager.BLL.RepositoryPattern.Services
             }
             catch (Exception ex)
             {
-                await ExceptionLogger.LogException(ex, _dbContext);
+                await LoggerHelper.LogException(ex, _dbContext);
 
                 return Response<ProjectDto>.ErrorMsg(ex.ToString());
             }
@@ -103,7 +103,7 @@ namespace TaskManager.BLL.RepositoryPattern.Services
             }
             catch (Exception ex)
             {
-                await ExceptionLogger.LogException(ex, _dbContext);
+                await LoggerHelper.LogException(ex, _dbContext);
 
                 return Response<ProjectDto>.ErrorMsg(ex.ToString());
             }
@@ -128,7 +128,7 @@ namespace TaskManager.BLL.RepositoryPattern.Services
             }
             catch (Exception ex)
             {
-                await ExceptionLogger.LogException(ex, _dbContext);
+                await LoggerHelper.LogException(ex, _dbContext);
 
                 return Response<bool>.ErrorMsg(ex.ToString());
             }

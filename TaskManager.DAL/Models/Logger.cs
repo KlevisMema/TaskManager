@@ -1,6 +1,6 @@
 ﻿namespace TaskManager.DAL.Models
 {
-    public class ExceptionLog
+    public class Logger
     {
         public int Id { get; set; }
         public string Message { get; set; } = string.Empty;

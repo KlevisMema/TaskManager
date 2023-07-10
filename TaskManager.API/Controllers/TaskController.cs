@@ -6,7 +6,7 @@ namespace TaskManager.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class TaskController : ControllerBase
+    public class TaskController : BaseController
     {
         private readonly ITaskService _taskService;
 

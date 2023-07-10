@@ -1,4 +1,15 @@
-﻿using System.Text;
+﻿/*
+    Entry point for registering all services in the Task Manager application.
+    This class contains extension methods to inject services into the service collection.
+
+    The ProgramExtension class provides methods to configure services such as adding databases,
+    AutoMapper, Swagger, custom services, and CORS.
+
+    It is used in the Program.cs file to register all the required services for the application.
+*/
+
+#region Usings
+using System.Text;
 using System.Reflection;
 using TaskManager.DAL.Models;
 using TaskManager.DAL.Mappers;
@@ -9,25 +20,26 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using TaskManager.BLL.RepositoryPattern.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using TaskManagment.SECURITY.UserAuthenticationService;
-using TaskManagment.SECURITY.UserAccountService.Settings;
+using TaskManagment.USER.UserAccountService.Settings;
+using TaskManagment.SECURITY.JWTAuthenticationService;
 using TaskManager.BLL.RepositoryPattern.ServicesInterfaces;
 using TaskManagment.SECURITY.ApplicationAuthorizationService.ServiceInterface;
-using TaskManagment.SECURITY.ApplicationAuthorizationService.ServiceImplementation;
+using TaskManagment.SECURITY.ApplicationAuthorizationService.ServiceImplementation; 
+#endregion
 
 namespace TaskManager.API.ProgramEntry
 {
     /// <summary>
-    ///     Register all services
+    /// Entry point for registering all services in the application.
     /// </summary>
     public static class ProgramExtension
     {
         /// <summary>
-        ///     A method that adds all the services
+        /// Injects all required services into the service collection.
         /// </summary>
-        /// <param name="Services"> The Service Collection </param>
-        /// <param name="Configuration"> A Configuration service </param>
-        /// <returns> Added services </returns>
+        /// <param name="Services">The service collection.</param>
+        /// <param name="Configuration">The configuration object.</param>
+        /// <returns>The updated service collection.</returns>
         public static IServiceCollection InjectServices
         (
            this IServiceCollection Services,
@@ -51,6 +63,11 @@ namespace TaskManager.API.ProgramEntry
             return Services;
         }
 
+        /// <summary>
+        ///     Add automaper in the container.
+        /// </summary>
+        /// <param name="Services"> The <see cref="IServiceCollection"/> </param>
+        /// <returns> Configured Services </returns>
         private static IServiceCollection
         AddAutomapper
         (
@@ -66,7 +83,11 @@ namespace TaskManager.API.ProgramEntry
 
             return Services;
         }
-
+        /// <summary>
+        ///     Add custom services in the container.
+        /// </summary>
+        /// <param name="Services"> The <see cref="IServiceCollection"/> </param>
+        /// <returns> Configured Services </returns>
         private static IServiceCollection
         AddServices
         (
@@ -83,7 +104,12 @@ namespace TaskManager.API.ProgramEntry
 
             return Services;
         }
-
+        /// <summary>
+        ///     Add swagger configured with security in the container
+        /// </summary>
+        /// <param name="Services"> The <see cref="IServiceCollection"/> </param>
+        /// <param name="Configuration"> The <see cref="IConfiguration"/> </param>
+        /// <returns> Configured Services </returns>
         private static IServiceCollection
         AddSwagger
         (
@@ -195,7 +221,12 @@ namespace TaskManager.API.ProgramEntry
 
             return Services;
         }
-
+        /// <summary>
+        ///     Add sql database with connection string in the container.
+        /// </summary>
+        /// <param name="Services"> The <see cref="IServiceCollection"/> </param>
+        /// <param name="Configuration"> The <see cref="IConfiguration"/> </param>
+        /// <returns> Configured Services </returns>
         private static IServiceCollection
         AddDatabase
         (
@@ -210,7 +241,12 @@ namespace TaskManager.API.ProgramEntry
 
             return Services;
         }
-
+        /// <summary>
+        ///     Add Cors configured in the container.
+        /// </summary>
+        /// <param name="Services"> The <see cref="IServiceCollection"/> </param>
+        /// <param name="Configuration"> The <see cref="IConfiguration"/> </param>
+        /// <returns> Configured Services </returns>
         private static IServiceCollection
         AddCors
         (

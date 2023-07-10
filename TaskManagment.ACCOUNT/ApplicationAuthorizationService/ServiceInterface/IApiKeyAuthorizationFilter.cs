@@ -1,9 +1,24 @@
-﻿using Microsoft.AspNetCore.Mvc.Filters;
+﻿/*
+  This file contains the interface IApiKeyAuthorizationFilter, which defines the contract for an API key authorization filter for application authorization.
+*/
+
+using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace TaskManagment.SECURITY.ApplicationAuthorizationService.ServiceInterface
 {
+    /// <summary>
+    /// Interface for an API key authorization filter.
+    /// </summary>
     public interface IApiKeyAuthorizationFilter
     {
-        void OnAuthorization(AuthorizationFilterContext context);
+        /// <summary>
+        /// Called when the authorization is being performed.
+        /// </summary>
+        /// <param name="context">The authorization filter context.</param>
+        void 
+        OnAuthorization
+        (
+            AuthorizationFilterContext context
+        );
     }
 }

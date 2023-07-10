@@ -1,5 +1,5 @@
 ﻿using TaskManager.DAL.DTO_s.Task;
-using TaskManager.BLL.ServiceResponse;
+using TaskManager.HELPERS.ServiceResponse;
 
 namespace TaskManager.BLL.RepositoryPattern.ServicesInterfaces
 {
