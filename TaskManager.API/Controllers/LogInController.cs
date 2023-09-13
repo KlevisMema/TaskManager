@@ -11,9 +11,7 @@ namespace TaskManager.API.Controllers
     /// <summary>
     ///     Log in controller
     /// </summary>
-    [ApiController]
-    [Route("api/[controller]")]
-    [ServiceFilter(typeof(IApiKeyAuthorizationFilter))]
+    //[ServiceFilter(typeof(IApiKeyAuthorizationFilter))]
     public class LogInController : ControllerBase
     {
         #region Fields and Constructor
