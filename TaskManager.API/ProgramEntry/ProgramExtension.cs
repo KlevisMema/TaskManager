@@ -24,7 +24,12 @@ using TaskManagment.USER.UserAccountService.Settings;
 using TaskManagment.SECURITY.JWTAuthenticationService;
 using TaskManager.BLL.RepositoryPattern.ServicesInterfaces;
 using TaskManagment.SECURITY.ApplicationAuthorizationService.ServiceInterface;
-using TaskManagment.SECURITY.ApplicationAuthorizationService.ServiceImplementation; 
+using TaskManagment.SECURITY.ApplicationAuthorizationService.ServiceImplementation;
+using AspNetCoreRateLimit;
+using TaskManagment.USER.UserAuthorizationService.ServiceInterfaces;
+using TaskManagment.USER.UserAuthorizationService.ServiceImplementation;
+using TaskManagment.SECURITY.JWTAuthenticationService.ServiceInterface;
+using TaskManagment.SECURITY.JWTAuthenticationService.ServiceImplementation;
 #endregion
 
 namespace TaskManager.API.ProgramEntry
@@ -59,6 +64,41 @@ namespace TaskManager.API.ProgramEntry
             Services = AddServices(Services);
 
             Services = AddCors(Services, Configuration);
+
+            Services = AddAPIRateLimiting(Services);
+
+            return Services;
+        }
+
+        /// <summary>
+        ///     Add api rate limiting in the container.
+        /// </summary>
+        /// <param name="Services"> The <see cref="IServiceCollection"/> </param>
+        /// <returns> Configured Services </returns>
+        private static IServiceCollection
+        AddAPIRateLimiting
+        (
+            IServiceCollection Services
+        )
+        {
+            // Limit 100 requests per minute for all endpoints. 
+            Services.Configure<IpRateLimitOptions>(options =>
+            {
+                options.GeneralRules = new List<RateLimitRule>
+                    {
+                        new RateLimitRule
+                        {
+                            Endpoint = "*",
+                            Limit = 100,
+                            PeriodTimespan = TimeSpan.FromMinutes(1)
+                        }
+                    };
+            });
+
+            Services.AddSingleton<IIpPolicyStore, MemoryCacheIpPolicyStore>();
+            Services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
+            Services.AddSingleton<IProcessingStrategy, AsyncKeyLockProcessingStrategy>();
+            Services.AddSingleton<IRateLimitCounterStore, MemoryCacheRateLimitCounterStore>();
 
             return Services;
         }
@@ -96,11 +136,13 @@ namespace TaskManager.API.ProgramEntry
         {
             Services.AddTransient<ITaskService, TaskService>();
             Services.AddTransient<IUserService, UserService>();
+            Services.AddTransient<ILoginService, LoginService>();
             Services.AddTransient<ILabelService, LabelService>();
             Services.AddTransient<IProjectService, ProjectService>();
             Services.AddTransient<ICommentService, CommentService>();
             Services.AddTransient<ICategoryService, CategoryService>();
             Services.AddTransient<IPriorityService, PriorityService>();
+            Services.AddTransient<IOAuthJwtTokenService, OAuthJwtTokenService>();
 
             return Services;
         }

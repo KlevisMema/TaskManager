@@ -7,7 +7,7 @@ namespace TaskManager.DAL.Models
         public string FirstName { get; set; } = string.Empty;
         public string LastName { get; set; } = string.Empty;
         public List<Task>? Tasks { get; set; }
-        public Guid ProjectId { get; set; }
+        public Guid? ProjectId { get; set; }
         public Project? Project { get; set; }
     }
 }

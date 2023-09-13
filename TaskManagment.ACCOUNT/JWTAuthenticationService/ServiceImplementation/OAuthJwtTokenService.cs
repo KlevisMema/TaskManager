@@ -84,8 +84,11 @@ namespace TaskManagment.SECURITY.JWTAuthenticationService.ServiceImplementation
                 new Claim(ClaimTypes.Name, user.Email),
                 new Claim(JwtRegisteredClaimNames.NameId, user.Id!),
                 new Claim(JwtRegisteredClaimNames.Email, user.Email),
+                new Claim(JwtRegisteredClaimNames.Name, user.FirstName),
+                new Claim(JwtRegisteredClaimNames.Aud, _jwtOptions.Value.Audience),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim(JwtRegisteredClaimNames.Iss, _jwtOptions.Value.Issuer)
+                new Claim(JwtRegisteredClaimNames.Iss, _jwtOptions.Value.Issuer),
+                new Claim(JwtRegisteredClaimNames.FamilyName, user.FirstName + " " + user.LastName),
             };
 
             claims.AddRange(user.Roles.Select(role => new Claim(ClaimTypes.Role, role)));
