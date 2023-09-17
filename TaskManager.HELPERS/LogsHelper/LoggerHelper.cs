@@ -28,15 +28,18 @@ namespace TaskManager.HELPERS.LogsHelper
         {
             try
             {
-                var exceptionLog = new DAL.Models.Logger
+                using (ApplicationDbContext db = new())
                 {
-                    Message = ex.Message,
-                    StackTrace = ex.StackTrace,
-                    OccurredAt = DateTime.UtcNow
-                };
+                    var exceptionLog = new DAL.Models.Logger
+                    {
+                        Message = ex.Message,
+                        StackTrace = ex.StackTrace,
+                        OccurredAt = DateTime.UtcNow
+                    };
 
-                dbContext.Logs.Add(exceptionLog);
-                await dbContext.SaveChangesAsync();
+                    db.Logs.Add(exceptionLog);
+                    await db.SaveChangesAsync();
+                }
             }
             catch (Exception ex2)
             {

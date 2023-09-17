@@ -19,6 +19,10 @@ namespace TaskManager.DAL.Context
     /// </summary>
     public class ApplicationDbContext : IdentityDbContext<User>
     {
+        public ApplicationDbContext()
+        {
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ApplicationDbContext"/> class.
         /// </summary>

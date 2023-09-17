@@ -8,8 +8,8 @@ namespace TaskManager.DAL.Models
         public string Description { get; set; } = string.Empty;
         public DateTime DueDate { get; set; }
         public Enums.TaskStatus Status { get; set; }
-        public Guid UserId { get; set; }
-        public User? User { get; set; }
+        //public Guid UserId { get; set; }
+        //public User? User { get; set; }
         public List<Comment>? Comments { get; set; }
         public Guid CategoryId { get; set; }
         public Category? Category { get; set; }
