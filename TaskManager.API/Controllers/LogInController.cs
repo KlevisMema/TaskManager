@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using TaskManager.DTO.DTO_s.Login;
 using TaskManager.HELPERS.ServiceResponse;
+using TaskManagment.SECURITY.ApplicationAuthorizationService.ServiceInterface;
 using TaskManagment.USER.UserAuthorizationService.ServiceInterfaces;
 #endregion
 
@@ -10,9 +11,8 @@ namespace TaskManager.API.Controllers
     /// <summary>
     ///     Log in controller
     /// </summary>
-    [ApiController]
-    [Route("api/[controller]")]
-    public class LogInController : BaseController
+    //[ServiceFilter(typeof(IApiKeyAuthorizationFilter))]
+    public class LogInController : ControllerBase
     {
         #region Fields and Constructor
         /// <summary>

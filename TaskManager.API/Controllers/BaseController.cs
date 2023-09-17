@@ -11,6 +11,7 @@
 */
 
 #region Usings
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TaskManagment.SECURITY.ApplicationAuthorizationService.ServiceInterface;
 #endregion
@@ -20,9 +21,10 @@ namespace TaskManager.API.Controllers
     /// <summary>
     /// Base API controller for the Task Manager application.
     /// </summary>
+    //[Authorize]
     [ApiController]
     [Route("api/[controller]")]
-    [ServiceFilter(typeof(IApiKeyAuthorizationFilter))]
+    //[ServiceFilter(typeof(IApiKeyAuthorizationFilter))]
     public class BaseController : ControllerBase
     {
     }

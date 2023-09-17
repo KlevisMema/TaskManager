@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TaskManager.DAL.Context;
 
@@ -11,9 +12,11 @@ using TaskManager.DAL.Context;
 namespace TaskManager.DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230913174235_ChangedTheProjectIdToNullableInUserModel")]
+    partial class ChangedTheProjectIdToNullableInUserModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -372,6 +375,12 @@ namespace TaskManager.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("UserId1")
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
@@ -379,6 +388,8 @@ namespace TaskManager.DAL.Migrations
                     b.HasIndex("PriorityId");
 
                     b.HasIndex("ProjectId");
+
+                    b.HasIndex("UserId1");
 
                     b.ToTable("Tasks");
                 });
@@ -570,11 +581,17 @@ namespace TaskManager.DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("TaskManager.DAL.Models.User", "User")
+                        .WithMany("Tasks")
+                        .HasForeignKey("UserId1");
+
                     b.Navigation("Category");
 
                     b.Navigation("Priority");
 
                     b.Navigation("Project");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("TaskManager.DAL.Models.User", b =>
@@ -601,6 +618,11 @@ namespace TaskManager.DAL.Migrations
             modelBuilder.Entity("TaskManager.DAL.Models.Task", b =>
                 {
                     b.Navigation("Comments");
+                });
+
+            modelBuilder.Entity("TaskManager.DAL.Models.User", b =>
+                {
+                    b.Navigation("Tasks");
                 });
 #pragma warning restore 612, 618
         }

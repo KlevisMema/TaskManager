@@ -30,8 +30,6 @@ namespace TaskManager.API.Controllers
     /// <summary>
     /// API controller for managing categories in the Task Manager application.
     /// </summary>
-    [ApiController]
-    [Route("api/[controller]")]
     public class CategoryController : BaseController
     {
         /// <summary>

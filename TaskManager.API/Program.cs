@@ -6,6 +6,8 @@ builder.Services.InjectServices(builder.Configuration);
 
 var app = builder.Build();
 
+await AfterAppBuildExtesion.Extension(app, builder.Configuration);
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

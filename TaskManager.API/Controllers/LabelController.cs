@@ -4,8 +4,6 @@ using TaskManager.BLL.RepositoryPattern.ServicesInterfaces;
 
 namespace TaskManager.API.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
     public class LabelController : BaseController
     {
         private readonly ILabelService _labelService;

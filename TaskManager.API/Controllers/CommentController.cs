@@ -29,8 +29,6 @@ namespace TaskManager.API.Controllers
     /// <summary>
     ///     This controller is responsible for managing comments in the Task Manager application.
     /// </summary>
-    [ApiController]
-    [Route("api/[controller]")]
     public class CommentController : BaseController
     {
         /// <summary>
